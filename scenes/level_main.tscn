@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dcp1ayio4r54m" path="res://scenes/miasto.tscn" id="2_1jf3i"]
 [ext_resource type="PackedScene" uid="uid://b18okfrq0gr6c" path="res://scenes/enemy_fp.tscn" id="2_nkk0e"]
 [ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="4_h4pi0"]
-[ext_resource type="Texture2D" uid="uid://dq1ywd6f2at73" path="res://buttons/button_resume.png" id="5_t0uby"]
-[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://buttons/button_quit.png" id="6_u1b3w"]
+[ext_resource type="Texture2D" uid="uid://dq1ywd6f2at73" path="res://assets/2d/buttons/button_resume.png" id="5_t0uby"]
+[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://assets/2d/buttons/button_quit.png" id="6_u1b3w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fpru"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

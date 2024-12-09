@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2ehnrnyl825q"]
 
-[ext_resource type="Texture2D" uid="uid://obmc275eq2fm" path="res://buttons/button_play.png" id="1_fmdni"]
-[ext_resource type="Texture2D" uid="uid://b4hrchl8lfxno" path="res://buttons/button_play_pressed.png" id="2_23us7"]
-[ext_resource type="Texture2D" uid="uid://7h6t5jlaotpp" path="res://buttons/button_credits.png" id="3_5xshb"]
-[ext_resource type="Texture2D" uid="uid://dnrjhp7hcv7dl" path="res://buttons/button_credits_pressed.png" id="4_2tcq6"]
-[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://buttons/button_quit.png" id="5_ivcjm"]
-[ext_resource type="Texture2D" uid="uid://cdv1hkl37ablw" path="res://buttons/button_quit_pressed.png" id="6_3yeyi"]
+[ext_resource type="Texture2D" uid="uid://obmc275eq2fm" path="res://assets/2d/buttons/button_play.png" id="1_fmdni"]
+[ext_resource type="Texture2D" uid="uid://b4hrchl8lfxno" path="res://assets/2d/buttons/button_play_pressed.png" id="2_23us7"]
+[ext_resource type="Texture2D" uid="uid://7h6t5jlaotpp" path="res://assets/2d/buttons/button_credits.png" id="3_5xshb"]
+[ext_resource type="Texture2D" uid="uid://dnrjhp7hcv7dl" path="res://assets/2d/buttons/button_credits_pressed.png" id="4_2tcq6"]
+[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://assets/2d/buttons/button_quit.png" id="5_ivcjm"]
+[ext_resource type="Texture2D" uid="uid://cdv1hkl37ablw" path="res://assets/2d/buttons/button_quit_pressed.png" id="6_3yeyi"]
 
 [sub_resource type="GDScript" id="GDScript_27cl6"]
 script/source = "extends Control
