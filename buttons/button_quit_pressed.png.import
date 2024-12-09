@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hrchl8lfxno"
-path="res://.godot/imported/button_play_pressed.png-cb01f4c334f131ff5909193d5ef150f7.ctex"
+uid="uid://cdv1hkl37ablw"
+path="res://.godot/imported/button_quit_pressed.png-4def897024b6ac3879efe68cb26b3cef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://przyciski/button_play_pressed.png"
-dest_files=["res://.godot/imported/button_play_pressed.png-cb01f4c334f131ff5909193d5ef150f7.ctex"]
+source_file="res://buttons/button_quit_pressed.png"
+dest_files=["res://.godot/imported/button_quit_pressed.png-4def897024b6ac3879efe68cb26b3cef.ctex"]
 
 [params]
 
