@@ -1,25 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmmgwc7nflff6"]
+[gd_scene load_steps=8 format=3 uid="uid://bmmgwc7nflff6"]
 
-[ext_resource type="PackedScene" path="res://menu_interface.tscn" id="2_kd7t0"]
+[ext_resource type="Texture2D" uid="uid://obmc275eq2fm" path="res://przyciski/button_play.png" id="1_fmdni"]
+[ext_resource type="Texture2D" uid="uid://b4hrchl8lfxno" path="res://przyciski/button_play_pressed.png" id="2_23us7"]
+[ext_resource type="Texture2D" uid="uid://7h6t5jlaotpp" path="res://przyciski/button_credits.png" id="3_5xshb"]
+[ext_resource type="Texture2D" uid="uid://dnrjhp7hcv7dl" path="res://przyciski/button_credits_pressed.png" id="4_2tcq6"]
+[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://przyciski/button_quit.png" id="5_ivcjm"]
+[ext_resource type="Texture2D" uid="uid://cdv1hkl37ablw" path="res://przyciski/button_quit_pressed.png" id="6_3yeyi"]
 
 [sub_resource type="GDScript" id="GDScript_27cl6"]
 script/source = "extends Control
 
 
-## Kliknięcie przycisku start
 
-func _on_start_pressed() -> void:
+
+func _on_start_pressed() -> void: ### Kliknięcie przycisku start
 	get_tree().change_scene_to_file(\"res://level_main.tscn\")
 
-##Kliknięcie przycisku Credits
 
-func _on_credits_pressed() -> void:
+
+func _on_credits_pressed() -> void: ###Kliknięcie przycisku Credits
 	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
 	##main menu zmienić na scenę z creditsami
 
-##Kliknięcie przycisku Quit
 
-func _on_quit_pressed() -> void:
+
+func _on_quit_pressed() -> void: ###Kliknięcie przycisku Quit
 	get_tree().quit()
 "
 
@@ -32,15 +37,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_27cl6")
 
-[node name="InterFace" parent="." instance=ExtResource("2_kd7t0")]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_left = -201.0
-offset_top = -191.0
-offset_right = 201.0
-offset_bottom = 191.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -20.0
+offset_right = 54.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
 
-[editable path="InterFace"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Wstępny tytuł
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_fmdni")
+texture_pressed = ExtResource("1_fmdni")
+texture_hover = ExtResource("2_23us7")
+
+[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_5xshb")
+texture_pressed = ExtResource("3_5xshb")
+texture_hover = ExtResource("4_2tcq6")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_ivcjm")
+texture_pressed = ExtResource("5_ivcjm")
+texture_hover = ExtResource("6_3yeyi")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
