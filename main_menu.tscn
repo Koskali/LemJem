@@ -7,9 +7,10 @@ script/source = "extends Control
 
 
 ## Kliknięcie przycisku start
+
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
-	##main menu zmienić na scenę z grą
+	get_tree().change_scene_to_file(\"res://level_main.tscn\")
+
 ##Kliknięcie przycisku Credits
 
 func _on_credits_pressed() -> void:
@@ -31,6 +32,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_27cl6")
 
-[node name="MarginContainer" parent="." instance=ExtResource("2_kd7t0")]
-layout_mode = 0
-anchors_preset = 0
+[node name="InterFace" parent="." instance=ExtResource("2_kd7t0")]
+layout_mode = 1
+offset_left = -201.0
+offset_top = -191.0
+offset_right = 201.0
+offset_bottom = 191.0
+
+[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="InterFace/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+
+[editable path="InterFace"]
