@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctba7dtuqbeya"]
+[gd_scene load_steps=13 format=3 uid="uid://ctba7dtuqbeya"]
 
 [ext_resource type="PackedScene" uid="uid://dnkjvujquu8fe" path="res://scenes/player_fp.tscn" id="1_e87fo"]
 [ext_resource type="PackedScene" uid="uid://dcp1ayio4r54m" path="res://scenes/miasto.tscn" id="2_1jf3i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsxdh26xpgpv" path="res://assets/2d/buttons/button_wyjdz.png" id="6_05n5y"]
 [ext_resource type="Texture2D" uid="uid://2ap5hl5px36p" path="res://assets/2d/buttons/button_wroc_pressed.png" id="6_f8wir"]
 [ext_resource type="Texture2D" uid="uid://cnmfbu8rqr7k" path="res://assets/2d/buttons/button_wyjdz_pressed.png" id="7_4memq"]
+[ext_resource type="Script" path="res://scenes/rich_text_label.gd" id="9_klvee"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fpru"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,42 +23,34 @@ sky = SubResource("Sky_xeq5b")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1tgwx"]
+[node name="Main" type="Node"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kw25q"]
-points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
+[node name="Gameplay" type="Node3D" parent="."]
 
-[node name="LevelMain" type="Node3D"]
+[node name="Levels" type="Node3D" parent="Gameplay"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_04q0b")
+[node name="Level1" type="Node3D" parent="Gameplay/Levels"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="City" parent="Gameplay/Levels/Level1" instance=ExtResource("2_1jf3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Gameplay/Levels/Level1"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Platform" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("PlaneMesh_1tgwx")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Gameplay/Levels/Level1"]
+environment = SubResource("Environment_04q0b")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Platform"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_kw25q")
-
-[node name="PlayerFP" parent="." instance=ExtResource("1_e87fo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10194, 1.66424, -28.3603)
-
-[node name="EnemyFP" parent="." instance=ExtResource("2_nkk0e")]
+[node name="EnemyFP" parent="Gameplay/Levels/Level1" instance=ExtResource("2_nkk0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85299, 0.75423, -36.8176)
 
-[node name="scena" parent="." instance=ExtResource("2_1jf3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
+[node name="UI" type="Node" parent="Gameplay"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Menu_Pauzy" type="CanvasLayer" parent="Gameplay/UI"]
+layer = 2
 script = ExtResource("4_h4pi0")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="Gameplay/UI/Menu_Pauzy"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -66,24 +59,45 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/UI/Menu_Pauzy/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 40
 
-[node name="Resume" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="Gameplay/UI/Menu_Pauzy/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_2lghi")
 texture_pressed = ExtResource("5_2lghi")
 texture_hover = ExtResource("6_f8wir")
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Gameplay/UI/Menu_Pauzy/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_05n5y")
 texture_pressed = ExtResource("6_05n5y")
 texture_hover = ExtResource("7_4memq")
 
-[connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Resume" to="CanvasLayer" method="_on_resume_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="CanvasLayer" method="_on_quit_pressed"]
+[node name="HUD_zbierania" type="CanvasLayer" parent="Gameplay/UI"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Gameplay/UI/HUD_zbierania"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Gameplay/UI/HUD_zbierania/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+text = "blalalalalal"
+script = ExtResource("9_klvee")
+
+[node name="Player" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerFP" parent="Gameplay/Player" instance=ExtResource("1_e87fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10194, 1.66424, -28.3603)
+
+[connection signal="pressed" from="Gameplay/UI/Menu_Pauzy/MarginContainer/VBoxContainer/Resume" to="Gameplay/UI/Menu_Pauzy" method="_on_resume_pressed"]
+[connection signal="pressed" from="Gameplay/UI/Menu_Pauzy/MarginContainer/VBoxContainer/Quit" to="Gameplay/UI/Menu_Pauzy" method="_on_quit_pressed"]
