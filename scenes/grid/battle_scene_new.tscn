@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://br171wtba60dr" path="res://assets/2d/grid_tile_smaller.png" id="1_2vxf0"]
 [ext_resource type="Script" path="res://scenes/grid/battle_scene_new.gd" id="1_qiffn"]
-[ext_resource type="PackedScene" path="res://scenes/grid/projectile.tscn" id="3_fxkxf"]
-[ext_resource type="PackedScene" path="res://scenes/grid/player_battle.tscn" id="4_vd0xd"]
-[ext_resource type="PackedScene" path="res://scenes/grid/enemy_battle.tscn" id="5_rqog5"]
+[ext_resource type="PackedScene" uid="uid://0o30ghj57e4m" path="res://scenes/grid/projectile.tscn" id="3_fxkxf"]
+[ext_resource type="PackedScene" uid="uid://dw0l70c6xrujj" path="res://scenes/grid/player_battle.tscn" id="4_vd0xd"]
+[ext_resource type="PackedScene" uid="uid://c6y6e2l8lbux6" path="res://scenes/grid/enemy_battle.tscn" id="5_rqog5"]
 [ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="6_o2oda"]
 [ext_resource type="Texture2D" uid="uid://bn06l2ahjutu5" path="res://assets/2d/buttons/button_wroc.png" id="7_s62w7"]
 [ext_resource type="Texture2D" uid="uid://k5muo4fffigk" path="res://assets/2d/buttons/button_wroc_pressed.png" id="8_3tfia"]
