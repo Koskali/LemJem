@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ou1fe47a0fep"]
+
+[ext_resource type="Texture2D" uid="uid://bj2g3sly5h8cb" path="res://icon.svg" id="1_mtumd"]
+[ext_resource type="Script" path="res://scenes/grid/player_battle.gd" id="1_uvy2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n7ct"]
+size = Vector2(112, 112)
+
+[node name="PlayerBattle" type="Area2D" groups=["player"]]
+script = ExtResource("1_uvy2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mtumd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2n7ct")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-128, 0)

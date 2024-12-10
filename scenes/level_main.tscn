@@ -24,7 +24,7 @@ tonemap_mode = 2
 glow_enabled = true
 fog_light_color = Color(0.390561, 0.368407, 0.441955, 1)
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.713186, 0.696792, 0.726189, 1)
+volumetric_fog_albedo = Color(0.586077, 0.531194, 0.641024, 1)
 
 [sub_resource type="FogMaterial" id="FogMaterial_oj1ob"]
 density = 3.0
