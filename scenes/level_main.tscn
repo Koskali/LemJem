@@ -90,6 +90,7 @@ size_flags_vertical = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Gameplay/UI/HUD_zbierania/MarginContainer"]
 layout_mode = 2
+text = "blalalalalal"
 script = ExtResource("9_klvee")
 
 [node name="Player" type="Node3D" parent="Gameplay"]

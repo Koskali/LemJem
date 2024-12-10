@@ -22,18 +22,14 @@ func _process(delta):
 	
 	apply_central_force(twist_pivot.basis * input * 1200.0 * delta)
 	
-	if Input.is_action_just_pressed("ui_cancel"): ### po nacisnieciu ESC kursor sie spowrotem pojawia i nie dziala kamera ale zato mozemy wyjsc z gry
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	
 	twist_pivot.rotate_y(twist_input)
 	pitch_pivot.rotate_x(pitch_input)
 	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x,  -0.5,  0.5)  ### ograniczenie pionowego obrotu kamery
 	twist_input = 0.0
 	pitch_input = 0.0
-
-
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: ### jesli nie widzimy kursora (czyli jestesmy w trybie grania) kamera jest sterowana ruchem myszy
-			twist_input = - event.relative.x * mouse_sensitivity
-			pitch_input = - event.relative.y * mouse_sensitivity
+func _input(event):
+	if event is InputEventMouse and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED :
+		twist_input = - event.relative.x * mouse_sensitivity
+		pitch_input = - event.relative.y * mouse_sensitivity
