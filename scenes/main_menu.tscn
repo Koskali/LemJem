@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2ehnrnyl825q"]
 
-[ext_resource type="Texture2D" uid="uid://obmc275eq2fm" path="res://assets/2d/buttons/button_play.png" id="1_fmdni"]
-[ext_resource type="Texture2D" uid="uid://b4hrchl8lfxno" path="res://assets/2d/buttons/button_play_pressed.png" id="2_23us7"]
-[ext_resource type="Texture2D" uid="uid://7h6t5jlaotpp" path="res://assets/2d/buttons/button_credits.png" id="3_5xshb"]
-[ext_resource type="Texture2D" uid="uid://dnrjhp7hcv7dl" path="res://assets/2d/buttons/button_credits_pressed.png" id="4_2tcq6"]
-[ext_resource type="Texture2D" uid="uid://c6w2f1ljq8yrm" path="res://assets/2d/buttons/button_quit.png" id="5_ivcjm"]
-[ext_resource type="Texture2D" uid="uid://cdv1hkl37ablw" path="res://assets/2d/buttons/button_quit_pressed.png" id="6_3yeyi"]
+[ext_resource type="Texture2D" uid="uid://cpmun48sw7s48" path="res://assets/2d/buttons/button_nowa.gra.png" id="1_7egv2"]
+[ext_resource type="Texture2D" uid="uid://4ehp060i2o8i" path="res://assets/2d/buttons/button_nowa.gra_pressed.png" id="2_h4d1t"]
+[ext_resource type="Texture2D" uid="uid://bowiwtk5ps6pi" path="res://assets/2d/buttons/button_tworcy.png" id="3_86230"]
+[ext_resource type="Texture2D" uid="uid://daby4h0s0tph" path="res://assets/2d/buttons/button_tworcy_pressed.png" id="4_rja6e"]
+[ext_resource type="Texture2D" uid="uid://bn7bc332r8l0v" path="res://assets/2d/buttons/button_wyjdz.png" id="5_4kywb"]
+[ext_resource type="Texture2D" uid="uid://363eia32dc2f" path="res://assets/2d/buttons/button_wyjdz_pressed.png" id="6_8q2ms"]
 
 [sub_resource type="GDScript" id="GDScript_27cl6"]
 script/source = "extends Control
@@ -63,21 +63,21 @@ theme_override_constants/separation = 30
 
 [node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_fmdni")
-texture_pressed = ExtResource("1_fmdni")
-texture_hover = ExtResource("2_23us7")
+texture_normal = ExtResource("1_7egv2")
+texture_pressed = ExtResource("1_7egv2")
+texture_hover = ExtResource("2_h4d1t")
 
 [node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_5xshb")
-texture_pressed = ExtResource("3_5xshb")
-texture_hover = ExtResource("4_2tcq6")
+texture_normal = ExtResource("3_86230")
+texture_pressed = ExtResource("3_86230")
+texture_hover = ExtResource("4_rja6e")
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_ivcjm")
-texture_pressed = ExtResource("5_ivcjm")
-texture_hover = ExtResource("6_3yeyi")
+texture_normal = ExtResource("5_4kywb")
+texture_pressed = ExtResource("5_4kywb")
+texture_hover = ExtResource("6_8q2ms")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

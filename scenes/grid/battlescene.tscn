@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpg8tx8f71nu1"]
+
+[ext_resource type="Script" path="res://scenes/grid/BattleScene.cs" id="1_kn6ik"]
+[ext_resource type="Texture2D" uid="uid://bj2g3sly5h8cb" path="res://icon.svg" id="2_t2s6x"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_kn6ik")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(604, 331)
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+texture = ExtResource("2_t2s6x")
+
+[node name="enemy" type="CharacterBody2D" parent="."]
