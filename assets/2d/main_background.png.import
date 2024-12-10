@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/2d/main_background.png.import
 uid="uid://b5p6iskrc785l"
 path="res://.godot/imported/main_background.png-41f78ea32fb8e3707196268cb470c00e.ctex"
+========
+uid="uid://dywrvcdyow1gd"
+path="res://.godot/imported/button_wyjdz.png-c9efe0d7ee5660c3221e38848499551f.ctex"
+>>>>>>>> origin/dominik-build:assets/2d/buttons/button_wyjdz.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/2d/main_background.png.import
 source_file="res://assets/2d/main_background.png"
 dest_files=["res://.godot/imported/main_background.png-41f78ea32fb8e3707196268cb470c00e.ctex"]
+========
+source_file="res://assets/2d/buttons/button_wyjdz.png"
+dest_files=["res://.godot/imported/button_wyjdz.png-c9efe0d7ee5660c3221e38848499551f.ctex"]
+>>>>>>>> origin/dominik-build:assets/2d/buttons/button_wyjdz.png.import
 
 [params]
 

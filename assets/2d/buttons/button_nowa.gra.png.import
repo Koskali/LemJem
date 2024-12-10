@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://gecpci6enh6j"
+=======
+uid="uid://cpmun48sw7s48"
+>>>>>>> origin/dominik-build
 path="res://.godot/imported/button_nowa.gra.png-411e948b9ef3d1438eb6661d3e24cba9.ctex"
 metadata={
 "vram_texture": false

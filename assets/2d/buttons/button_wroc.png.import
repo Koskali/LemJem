@@ -2,16 +2,46 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<<< HEAD:assets/2d/buttons/button_wroc.png.import
 uid="uid://gxryqtru7xng"
 path="res://.godot/imported/button_wroc.png-8c9ff60b3fcb74acbaaf8a3620ee643d.ctex"
+========
+uid="uid://bh0vv2x20b3ea"
+path="res://.godot/imported/kostka.png-daa1118b737be3323f275606ec7a545f.ctex"
+>>>>>>>> origin/dominik-build:assets/3d/textures/kostka.png.import
+=======
+<<<<<<<< HEAD:assets/2d/buttons/button_wyjdz.png.import
+uid="uid://bsxdh26xpgpv"
+path="res://.godot/imported/button_wyjdz.png-c9efe0d7ee5660c3221e38848499551f.ctex"
+========
+uid="uid://bn06l2ahjutu5"
+path="res://.godot/imported/button_wroc.png-8c9ff60b3fcb74acbaaf8a3620ee643d.ctex"
+>>>>>>>> origin/dominik-build:assets/2d/buttons/button_wroc.png.import
+>>>>>>> origin/dominik-build
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:assets/2d/buttons/button_wroc.png.import
 source_file="res://assets/2d/buttons/button_wroc.png"
 dest_files=["res://.godot/imported/button_wroc.png-8c9ff60b3fcb74acbaaf8a3620ee643d.ctex"]
+========
+source_file="res://assets/3d/textures/kostka.png"
+dest_files=["res://.godot/imported/kostka.png-daa1118b737be3323f275606ec7a545f.ctex"]
+>>>>>>>> origin/dominik-build:assets/3d/textures/kostka.png.import
+=======
+<<<<<<<< HEAD:assets/2d/buttons/button_wyjdz.png.import
+source_file="res://assets/2d/buttons/button_wyjdz.png"
+dest_files=["res://.godot/imported/button_wyjdz.png-c9efe0d7ee5660c3221e38848499551f.ctex"]
+========
+source_file="res://assets/2d/buttons/button_wroc.png"
+dest_files=["res://.godot/imported/button_wroc.png-8c9ff60b3fcb74acbaaf8a3620ee643d.ctex"]
+>>>>>>>> origin/dominik-build:assets/2d/buttons/button_wroc.png.import
+>>>>>>> origin/dominik-build
 
 [params]
 

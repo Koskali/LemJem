@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cd34kqtlk6ajm"
+=======
+uid="uid://cnpunjh203s17"
+>>>>>>> origin/dominik-build
 path="res://.godot/imported/próbny_kawałek_maski.jpeg-d1d139623694ba08d2afcb6e4957eaa0.ctex"
 metadata={
 "vram_texture": false

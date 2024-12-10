@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://d2vipqudrjpd"
+=======
+uid="uid://daby4h0s0tph"
+>>>>>>> origin/dominik-build
 path="res://.godot/imported/button_tworcy_pressed.png-cba7d32ecd934625333c9ef30ed75502.ctex"
 metadata={
 "vram_texture": false
