@@ -47,7 +47,7 @@ shape = SubResource("ConvexPolygonShape3D_kw25q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10194, 1.66424, -28.3603)
 
 [node name="EnemyFP" parent="." instance=ExtResource("2_nkk0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80193, 1.32968, -39.0028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85299, 0.75423, -36.8176)
 
 [node name="scena" parent="." instance=ExtResource("2_1jf3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
