@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://2nfix8hj7df3"]
+[gd_scene load_steps=13 format=3 uid="uid://3w702pn1miun"]
 
 [ext_resource type="Texture2D" uid="uid://br171wtba60dr" path="res://assets/2d/grid_tile_smaller.png" id="1_2vxf0"]
 [ext_resource type="Script" path="res://scenes/grid/battle_scene_new.gd" id="1_qiffn"]
-[ext_resource type="PackedScene" uid="uid://dna6wl1va7v23" path="res://scenes/grid/projectile.tscn" id="3_fxkxf"]
-[ext_resource type="PackedScene" uid="uid://ou1fe47a0fep" path="res://scenes/grid/player_battle.tscn" id="4_vd0xd"]
-[ext_resource type="PackedScene" uid="uid://dpm74wt5cp7f7" path="res://scenes/grid/enemy_battle.tscn" id="5_rqog5"]
+[ext_resource type="PackedScene" path="res://scenes/grid/projectile.tscn" id="3_fxkxf"]
+[ext_resource type="PackedScene" path="res://scenes/grid/player_battle.tscn" id="4_vd0xd"]
+[ext_resource type="PackedScene" path="res://scenes/grid/enemy_battle.tscn" id="5_rqog5"]
+[ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="6_o2oda"]
+[ext_resource type="Texture2D" uid="uid://bn06l2ahjutu5" path="res://assets/2d/buttons/button_wroc.png" id="7_s62w7"]
+[ext_resource type="Texture2D" uid="uid://k5muo4fffigk" path="res://assets/2d/buttons/button_wroc_pressed.png" id="8_3tfia"]
+[ext_resource type="Texture2D" uid="uid://dywrvcdyow1gd" path="res://assets/2d/buttons/button_wyjdz.png" id="9_2nuad"]
+[ext_resource type="Texture2D" uid="uid://363eia32dc2f" path="res://assets/2d/buttons/button_wyjdz_pressed.png" id="10_m2g1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqvly"]
 texture = ExtResource("1_2vxf0")
@@ -40,5 +45,38 @@ position = Vector2(576, 64)
 
 [node name="TimerEnemy" type="Timer" parent="."]
 
+[node name="Menu_Pauzy" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("6_o2oda")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu_Pauzy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_Pauzy/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Resume" type="TextureButton" parent="Menu_Pauzy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_s62w7")
+texture_pressed = ExtResource("7_s62w7")
+texture_hover = ExtResource("8_3tfia")
+
+[node name="Quit" type="TextureButton" parent="Menu_Pauzy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_2nuad")
+texture_pressed = ExtResource("9_2nuad")
+texture_hover = ExtResource("10_m2g1w")
+
 [connection signal="timeout" from="TimerPlayer" to="." method="_on_timer_player_timeout"]
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_timer_enemy_timeout"]
+[connection signal="pressed" from="Menu_Pauzy/MarginContainer/VBoxContainer/Resume" to="Menu_Pauzy" method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu_Pauzy/MarginContainer/VBoxContainer/Quit" to="Menu_Pauzy" method="_on_quit_pressed"]
