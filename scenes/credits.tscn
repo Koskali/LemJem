@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtf61hkoupoln"]
+
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_71a2h"]
+[ext_resource type="Texture2D" uid="uid://di5chs8bg2unl" path="res://assets/2d/Credit background.png" id="1_oytxj"]
+[ext_resource type="Texture2D" uid="uid://gxryqtru7xng" path="res://assets/2d/buttons/button_wroc.png" id="2_ibqds"]
+[ext_resource type="Texture2D" uid="uid://2ap5hl5px36p" path="res://assets/2d/buttons/button_wroc_pressed.png" id="3_6sy7p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8qnf"]
+line_spacing = 8.0
+font_size = 26
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_71a2h")
+
+[node name="CreditBackground" type="Sprite2D" parent="."]
+position = Vector2(610, 331)
+scale = Vector2(0.640881, 0.64139)
+texture = ExtResource("1_oytxj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = 29.0
+offset_right = 936.0
+offset_bottom = 609.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jakub Wójcik – project manager / Godot Junior / C# Regular
+Filip Łątka - experience designer / 3D environment designer
+Dominik Puława - game designer / project manager
+Daniel Mazurek - game designer / 2D assets and concept art
+Julia Turowska - game designer / Godot senior
+Roksana Łazarska - experience designer / 3D lever designer
+Zuzanna Stańczyk – sound designer / 3D designer
+Gabriela Wilczyńska - experience designer / animation designer
+Adam Rutkowski - quallity assurance / game designer
+Szymon Skrzypek - quallity assurance / 3D designer
+"
+label_settings = SubResource("LabelSettings_y8qnf")
+horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_ibqds")
+texture_pressed = ExtResource("2_ibqds")
+texture_hover = ExtResource("3_6sy7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(530, 503)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
