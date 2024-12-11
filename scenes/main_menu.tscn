@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2ehnrnyl825q"]
+[gd_scene load_steps=11 format=3 uid="uid://d2ehnrnyl825q"]
 
 [ext_resource type="Texture2D" uid="uid://bxddaa06ja7v0" path="res://assets/2d/main_background.png" id="1_1giaf"]
 [ext_resource type="Texture2D" uid="uid://cpmun48sw7s48" path="res://assets/2d/buttons/button_nowa.gra.png" id="1_7egv2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daby4h0s0tph" path="res://assets/2d/buttons/button_tworcy_pressed.png" id="4_rja6e"]
 [ext_resource type="Texture2D" uid="uid://dywrvcdyow1gd" path="res://assets/2d/buttons/button_wyjdz.png" id="5_4kywb"]
 [ext_resource type="Texture2D" uid="uid://363eia32dc2f" path="res://assets/2d/buttons/button_wyjdz_pressed.png" id="6_8q2ms"]
+[ext_resource type="AudioStream" uid="uid://dcf55lyobojtv" path="res://assets/menu.wav" id="8_tsu85"]
 
 [sub_resource type="GDScript" id="GDScript_27cl6"]
 script/source = "extends Control
@@ -89,6 +90,11 @@ layout_mode = 2
 texture_normal = ExtResource("5_4kywb")
 texture_pressed = ExtResource("5_4kywb")
 texture_hover = ExtResource("6_8q2ms")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tsu85")
+volume_db = 5.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

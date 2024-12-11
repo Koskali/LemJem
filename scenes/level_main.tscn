@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctba7dtuqbeya"]
+[gd_scene load_steps=15 format=3 uid="uid://ctba7dtuqbeya"]
 
 [ext_resource type="PackedScene" uid="uid://dnkjvujquu8fe" path="res://scenes/player_fp.tscn" id="1_e87fo"]
 [ext_resource type="PackedScene" uid="uid://dcp1ayio4r54m" path="res://scenes/miasto.tscn" id="2_1jf3i"]
 [ext_resource type="PackedScene" uid="uid://b18okfrq0gr6c" path="res://scenes/enemy_fp.tscn" id="2_nkk0e"]
+[ext_resource type="AudioStream" uid="uid://21jft3fc1enf" path="res://assets/walking2.0.wav" id="3_5csg5"]
 [ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="4_h4pi0"]
 [ext_resource type="Texture2D" uid="uid://bn06l2ahjutu5" path="res://assets/2d/buttons/button_wroc.png" id="5_2lghi"]
 [ext_resource type="Texture2D" uid="uid://dywrvcdyow1gd" path="res://assets/2d/buttons/button_wyjdz.png" id="6_05n5y"]
@@ -50,11 +51,16 @@ shadow_enabled = true
 environment = SubResource("Environment_04q0b")
 
 [node name="EnemyFP" parent="Gameplay/Levels/Level1" instance=ExtResource("2_nkk0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85299, 0.75423, -36.8176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.4301, 0.75423, -96.5442)
 
 [node name="FogVolume" type="FogVolume" parent="Gameplay/Levels/Level1"]
 size = Vector3(10, 2, 2)
 material = SubResource("FogMaterial_oj1ob")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Gameplay/Levels/Level1"]
+stream = ExtResource("3_5csg5")
+volume_db = 5.0
+autoplay = true
 
 [node name="UI" type="Node" parent="Gameplay"]
 
