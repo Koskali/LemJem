@@ -22,14 +22,14 @@ func _process(delta):
 	
 	apply_central_force(twist_pivot.basis * input * 1200.0 * delta)
 	
-
-	
 	twist_pivot.rotate_y(twist_input)
 	pitch_pivot.rotate_x(pitch_input)
 	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x,  -0.5,  0.5)  ### ograniczenie pionowego obrotu kamery
 	twist_input = 0.0
 	pitch_input = 0.0
-func _input(event):
-	if event is InputEventMouse and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED :
+	
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED :
 		twist_input = - event.relative.x * mouse_sensitivity
 		pitch_input = - event.relative.y * mouse_sensitivity
