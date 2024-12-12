@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://3w702pn1miun"]
+
+[ext_resource type="Texture2D" uid="uid://br171wtba60dr" path="res://assets/2d/grid_tile_smaller.png" id="1_2vxf0"]
+[ext_resource type="Script" path="res://scenes/grid/battle_scene_new.gd" id="1_qiffn"]
+[ext_resource type="PackedScene" uid="uid://0o30ghj57e4m" path="res://scenes/grid/projectile.tscn" id="3_fxkxf"]
+[ext_resource type="PackedScene" uid="uid://dw0l70c6xrujj" path="res://scenes/grid/player_battle.tscn" id="4_vd0xd"]
+[ext_resource type="PackedScene" uid="uid://c6y6e2l8lbux6" path="res://scenes/grid/enemy_battle.tscn" id="5_rqog5"]
+[ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="6_o2oda"]
+[ext_resource type="Texture2D" uid="uid://bn06l2ahjutu5" path="res://assets/2d/buttons/button_wroc.png" id="7_s62w7"]
+[ext_resource type="Texture2D" uid="uid://k5muo4fffigk" path="res://assets/2d/buttons/button_wroc_pressed.png" id="8_3tfia"]
+[ext_resource type="Texture2D" uid="uid://dywrvcdyow1gd" path="res://assets/2d/buttons/button_wyjdz.png" id="9_2nuad"]
+[ext_resource type="Texture2D" uid="uid://363eia32dc2f" path="res://assets/2d/buttons/button_wyjdz_pressed.png" id="10_m2g1w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqvly"]
+texture = ExtResource("1_2vxf0")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tkpdv"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pqvly")
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_qiffn")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tkpdv")
+format = 2
+layer_0/tile_data = PackedInt32Array(262148, 65536, 0, 262147, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262146, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 131078, 65536, 0, 65542, 65536, 0, 6, 65536, 0, 5, 65536, 0, 4, 65536, 0, 3, 65536, 0, 2, 65536, 0, 65538, 65536, 0, 131074, 65536, 0, 196610, 65536, 0, 65539, 65536, 0, 131075, 65536, 0, 196611, 65536, 0, 131076, 65536, 0, 65540, 65536, 0, 196612, 65536, 0, 131077, 65536, 0, 65541, 65536, 0, 262151, 0, 0, 196615, 0, 0, 131079, 0, 0, 65543, 0, 0, 7, 0, 0, -65529, 0, 0, -65530, 0, 0, -65531, 0, 0, -65532, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 262152, 0, 0, 196616, 0, 0, 131080, 0, 0, 65544, 0, 0, 8, 0, 0, -65528, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 327680, 0, 0, 262144, 0, 0, 196608, 0, 0)
+
+[node name="PlayerBullets" type="Node2D" parent="."]
+
+[node name="Projectile" parent="PlayerBullets" instance=ExtResource("3_fxkxf")]
+
+[node name="PlayerBattle" parent="." instance=ExtResource("4_vd0xd")]
+position = Vector2(577, 576)
+
+[node name="EnemyBattle" parent="." instance=ExtResource("5_rqog5")]
+position = Vector2(576, 64)
+
+[node name="TimerPlayer" type="Timer" parent="."]
+
+[node name="TimerEnemy" type="Timer" parent="."]
+
+[node name="Menu_Pauzy" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("6_o2oda")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu_Pauzy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_Pauzy/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Resume" type="TextureButton" parent="Menu_Pauzy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_s62w7")
+texture_pressed = ExtResource("7_s62w7")
+texture_hover = ExtResource("8_3tfia")
+
+[node name="Quit" type="TextureButton" parent="Menu_Pauzy/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_2nuad")
+texture_pressed = ExtResource("9_2nuad")
+texture_hover = ExtResource("10_m2g1w")
+
+[connection signal="timeout" from="TimerPlayer" to="." method="_on_timer_player_timeout"]
+[connection signal="timeout" from="TimerEnemy" to="." method="_on_timer_enemy_timeout"]
+[connection signal="pressed" from="Menu_Pauzy/MarginContainer/VBoxContainer/Resume" to="Menu_Pauzy" method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu_Pauzy/MarginContainer/VBoxContainer/Quit" to="Menu_Pauzy" method="_on_quit_pressed"]

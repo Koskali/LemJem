@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6y6e2l8lbux6"]
+
+[ext_resource type="Script" path="res://scenes/grid/enemy_battle.gd" id="1_6pnpw"]
+[ext_resource type="Texture2D" uid="uid://ba7as34ruuwqx" path="res://assets/2d/combat_icons_enemy.png" id="2_an3fv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k5x5"]
+size = Vector2(112, 112)
+
+[node name="EnemyBattle" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_6pnpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_an3fv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5k5x5")
