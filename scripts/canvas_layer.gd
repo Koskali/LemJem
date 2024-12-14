@@ -10,14 +10,11 @@ func _process(delta: float) -> void: ### po kliknięciu "esc", pauza wszystkiego
 		get_tree().paused = true 
 		set_visible(true) 
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
 
 func _on_resume_pressed() -> void:### nie widać menu i odpauzowanie gry
 	get_tree().paused = false
 	set_visible(false) 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 
-
 func _on_quit_pressed() -> void: ### wyjście z gry
-
 	get_tree().quit() 
