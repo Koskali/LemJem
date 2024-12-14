@@ -18,7 +18,10 @@ func _process(delta):
 	var input := Vector3.ZERO
 	input.x = Input.get_axis("move_left","move_right")
 	input.z = Input.get_axis("move_forward","move_back")
-
+	
+	# Spowolnienie poruszania się na "skos"
+	if input.length() > 0:
+		input = input.normalized()
 	
 	apply_central_force(twist_pivot.basis * input * 1200.0 * delta)
 	
